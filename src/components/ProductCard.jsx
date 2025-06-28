@@ -7,7 +7,7 @@ function ProductCard({ product, currentPage }) {
   return (
     <div
       className="bg-gray-800 p-4 rounded-lg hover:shadow-lg transition cursor-pointer"
-      onClick={() => navigate(`/product/${product._id}?page=${currentPage}`)}
+      onClick={() => navigate(`/product/${product.id}?page=${currentPage}`)}
     >
       <img
         src={image}

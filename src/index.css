@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.badgeStyle {
+    @apply bg-[#212121] text-white inline-block rounded-[100px] px-3 py-1
+}

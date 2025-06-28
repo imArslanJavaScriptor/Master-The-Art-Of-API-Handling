@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { fetchProductById } from "../api/productApi";
+import { Loader } from "lucide-react";
 
 function ProductDetail() {
   const { productId } = useParams();
   const [searchParams] = useSearchParams();
-  const pageFrom = searchParams.get("page") || 1;
+  const pageFrom = searchParams.get("page");
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,9 @@ function ProductDetail() {
       </button>
 
       {loading ? (
-        <p>Loading...</p>
+        <div className="flex items-center justify-center min-h-screen w-full">
+          <Loader className="animate-spin" />
+        </div>
       ) : product ? (
         <div className="max-w-3xl mx-auto bg-gray-900 p-6 rounded-lg">
           <img
